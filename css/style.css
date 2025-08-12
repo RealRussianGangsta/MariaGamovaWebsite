@@ -1,0 +1,310 @@
+/* Reset базовых стилей */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+a {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* устанавливаем константы и стили */
+
+:root {
+    --grey-fill: #bababa;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+.section_container {
+    padding: 20px;
+    padding-top: 90px;
+    min-height: calc(100vh - 60px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text_paragraph_big {
+    line-height: 40px;
+    text-align: center;
+}
+
+/* шапка и меню */
+
+.navigation {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    display: flex;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 1600px;
+    height: 70px;
+    align-items: center;
+    border-bottom: 1px solid var(--grey-fill);
+}
+
+.navigation_logo {
+    width: 135px;
+    height: 50px;
+    background-color: var(--grey-fill);
+    border-radius: 5px;
+}
+
+.navigation_options {
+    display: none;
+    margin-left: auto;
+}
+
+.navigation_option {
+    width: 135px;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 10px;
+}
+
+.navigation_option:hover {
+    background-color: var(--grey-fill);
+}
+
+.navigation_option:nth-child(2) {
+    line-height: 24px;
+}
+
+.navigation_option+.navigation_option {
+    border-left: 1px solid var(--grey-fill);
+}
+
+.navigation_burger {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background-color: var(--grey-fill);
+}
+
+.burger-line {
+    width: 44px;
+    height: 6px;
+    background-color: #fff;
+
+}
+
+.side_menu {
+    height: 280px;
+    width: 250px;
+    position: fixed;
+    top: 70px;
+    right: -250px;
+    transition: right 0.3s ease;
+}
+
+.side_menu_open {
+    right: 0px;
+}
+
+.side_menu_elem {
+    height: 70px;
+    line-height: 70px;
+    text-align: right;
+    padding-right: 15px;
+    background-color: #D9D2D2;
+}
+
+.side_menu_elem:hover {
+    background-color: gray;
+}
+
+.side_menu *+* {
+    border-top: 1px solid #000;
+}
+
+
+/* О нас */
+.about_photo {
+    max-width: 250px;
+    height: 350px;
+    margin: 0 auto;
+    background-color: var(--grey-fill);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Группы и проекты */
+.products_item {
+    padding: 20px 0;
+}
+
+.products_item+.products_item {
+    border-top: 1px solid var(--grey-fill);
+}
+
+.products_item_img {
+    max-width: 700px;
+    height: 200px;
+    background-color: var(--grey-fill);
+    margin: 10px auto;
+}
+
+.products_item_more {
+    text-decoration: underline;
+}
+
+/* Библиотека */
+.library_item {
+    padding: 10px;
+    background-color: #efefef;
+    border-bottom: 2px solid var(--grey-fill);
+    border-right: 1px solid var(--grey-fill);
+    border-radius: 5px;
+
+}
+
+.library_item+.library_item {
+    margin-top: 20px;
+}
+
+/* Контакты */
+.contact_text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact_list_item {
+    text-align: center;
+}
+
+.contact_list_item+.contact_list_item {
+    margin-top: 10px;
+}
+
+
+/* футер */
+
+footer {
+    background-color: var(--grey-fill);
+}
+
+.footer_top {
+    margin: 0 auto;
+    display: flex;
+    max-width: 325px;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    padding: 15px;
+}
+
+.copyright {
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+
+/* Адаптив */
+
+/* Medium devices (≥768px) */
+@media (min-width: 768px) {
+
+    /* CSS для средних экранов и больше */
+
+    .navigation_burger {
+        display: none;
+    }
+
+    .navigation_options {
+        display: flex;
+    }
+
+    .section_container {
+        padding: 70px;
+        padding-top: 110px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .about_photo {
+        margin-bottom: 40px;
+    }
+
+    .contact_text {
+        margin-bottom: 40px;
+    }
+
+    .contact_list {
+        display: flex;
+        justify-content: space-between;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .products_item_img {
+    margin: 20px auto;
+}
+
+    .products_item_more {
+        text-align: center;
+    }
+}
+
+/* Extra large devices (≥1200px) */
+@media (min-width: 1200px) {
+
+    /* CSS для очень больших экранов и больше */
+    .section_container {
+        padding: 70px 200px;
+        padding-top: 110px;
+    }
+
+    .navigation {
+        padding: 0 60px;
+    }
+}
