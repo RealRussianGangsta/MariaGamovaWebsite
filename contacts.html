@@ -16,7 +16,8 @@
         <div class="section_container">
             <h2 class="contact_head">Контакты</h2>
             <p class="contact_text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem sint qui delectus reiciendis tenetur recusandae?
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem sint qui delectus reiciendis tenetur
+                recusandae?
             </p>
             <div class="contact_list">
                 <!-- contact data -->
@@ -33,14 +34,64 @@
                     контакт 1
                 </div>
             </div>
+
+            <!-- форма обратной связи -->
+            <form action="#" method="post" novalidate class="contact_form">
+                <h3 class="form_head">Оставить заявку</h3>
+
+                <div class="form_flexcontainer">
+                    <div class="form_leftside">
+                        <div class="form_item">
+                            <input class="formItem_textfield" id="name" name="name" type="text" required
+                                placeholder="Ваше имя" />
+                        </div>
+                        
+
+                        <div class="form_item">
+                            <select class="formItem_textfield" name="contact-options" id="contact-options">
+                                <option value=""><span>Удобный способ связи</span></option>
+                                <option value="email">По электронной почте</option>
+                                <option value="tel">По номеру телефона</option>
+                            </select>
+                        </div>
+
+                        <div class="form_item">
+                            <input class="formItem_textfield" id="email" name="email" type="email" placeholder="contact option"
+                            />
+                        </div>
+
+                    </div>
+                    <div class="form_rightside">
+                        <div class="form_item">
+                            <textarea class="formItem_textarea" id="message" name="message"
+                            placeholder="Сообщение"
+                            required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Согласие на обработку данных -->
+                <div class="form_item">
+                    <input id="consent" class="form_agree" name="consent" type="checkbox" required />
+                    <label class="form_agree" for="consent">Согласен(на) на обработку персональных данных *</label>
+                </div>
+
+                <button class="form_button" type="submit">Отправить</button>
+
+                <!-- зона для сообщений сервера -->
+                <div role="status" aria-live="polite" id="form-status"></div>
+
+            </form>
+
         </div>
+
     </section>
 
     <footer></footer>
 
     <!-- add header and footer -->
     <script src="js/header_footer.js"></script>
-    
+
 </body>
 
 </html>
